@@ -2,7 +2,7 @@
 
 ## Description
 A tic-tac-toe game played on the command line where two human players can play against each other. The board is displayed
-in between turn. 
+in between turns. 
 
 ## Purpose
 
