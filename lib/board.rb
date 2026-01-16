@@ -1,4 +1,5 @@
 class Board
+  
   def initialize
     
   end
@@ -23,12 +24,19 @@ class Board
       end
     end
   end
-#write a formula to change a number position to X or O
+
   def update_board(position, marker)
     zero_based = position - 1
     row_index = zero_based / 3
     col_index = zero_based % 3
+
+    current_value = @board[row_index][col_index]
+    return false if current_value.is_a?(String)
+
     @board[row_index][col_index] = marker
+    true
+    
+
   end
 
 end

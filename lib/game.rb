@@ -17,6 +17,5 @@ end
 
 practice_board = Board.new
 practice_board.create_board
-practice_board.show_board
 practice_board.update_board(5,"X")
 practice_board.show_board
