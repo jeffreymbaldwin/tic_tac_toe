@@ -23,6 +23,13 @@ class Board
       end
     end
   end
+#write a formula to change a number position to X or O
+  def update_board(position, marker)
+    zero_based = position - 1
+    row_index = zero_based / 3
+    col_index = zero_based % 3
+    @board[row_index][col_index] = marker
+  end
 
 end
 
