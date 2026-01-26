@@ -14,31 +14,50 @@ class Game
   def start
     @board.create_board
     @board.show_board
-    #@board.update_board(5,"X")
-    #@board.show_board
-    turn
+    play
+  end
+  def play
+    loop do 
+      turn
+
+      #reasons to break the loop if they don't exist
+      
+      switch_player
+    end
+    
   end
 
-  def turn
-    puts "What number will you place your marker?"
+  def ask_for_position
+
     input = gets.chomp
-    
+
     until input.match?(/^[1-9]$/)
       puts "Please enter a number between 1 and 9:"
       input = gets.chomp
     end
 
-    position = input.to_i
+    input.to_i
+  end
+
+
+  def turn
+    puts "What number will you place your marker?"
+
+    position = ask_for_position
 
     currentmarker = @current_player.marker
 
     until @board.update_board(position,currentmarker)
       puts "That spot is already taken"
-      position = gets.chomp.to_i
+      position = ask_for_position
     end
     
     puts "Marker Placed!"
     @board.show_board
+  end
+
+  def switch_player
+    @current_player = (@current_player == @player_one) ? @player_two : @player_one
   end
 end
 
