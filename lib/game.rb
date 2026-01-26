@@ -31,8 +31,8 @@ class Game
     position = input.to_i
 
     currentmarker = @current_player.marker
-    
-    while @board.update_board(position,currentmarker) == false
+
+    until @board.update_board(position,currentmarker)
       puts "That spot is already taken"
       position = gets.chomp.to_i
     end
