@@ -18,6 +18,7 @@ class Game
   end
   def play
     loop do 
+      puts "It's #{@current_player.marker}'s turn."
       turn
       if @board.winner?(@current_player.marker)
         puts "#{@current_player.marker} wins!"
@@ -27,7 +28,6 @@ class Game
         break
       else
         switch_player
-        puts "It's #{@current_player.marker}'s turn."
       end
     end
   end
