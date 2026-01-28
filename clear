@@ -1,0 +1,60 @@
+[1mdiff --git a/lib/board.rb b/lib/board.rb[m
+[1mindex 96f9b99..233333e 100644[m
+[1m--- a/lib/board.rb[m
+[1m+++ b/lib/board.rb[m
+[36m@@ -35,12 +35,38 @@[m [mclass Board[m
+ [m
+     @board[row_index][col_index] = marker[m
+     true[m
+[32m+[m[32m  end[m
+[32m+[m
+[32m+[m[32m  def winner?(marker)[m
+[32m+[m[32m    lines = [][m
+     [m
+[32m+[m[32m    @board.each do |row|[m
+[32m+[m[32m      lines << row[m
+[32m+[m[32m    end[m
+[32m+[m
+[32m+[m[32m    @board.transpose.each do |column|[m
+[32m+[m[32m      lines << column[m
+[32m+[m[32m    end[m
+[32m+[m
+[32m+[m[32m    diag1 = [@board[0][0], @board[1][1], @board[2][2]][m
+[32m+[m[32m    diag2 = [@board[0][2], @board[1][1], @board[2][0]][m
+[32m+[m
+[32m+[m[32m    lines << diag1[m
+[32m+[m[32m    lines << diag2[m
+ [m
+[32m+[m[32m    lines.any? do |line|[m
+[32m+[m[32m      line.all? do |element|[m
+[32m+[m[32m        element == marker[m
+[32m+[m[32m      end[m
+[32m+[m[32m    end[m
+   end[m
+ [m
+[31m-end[m
+[32m+[m[32m  def draw?[m
+[32m+[m[32m    flat_board = @board.flatten[m
+ [m
+[31m-#board = Board.new[m
+[32m+[m[32m    flat_board.none? do |element|[m
+[32m+[m[32m      element.is_a?(Integer)[m
+[32m+[m[32m    end[m
+ [m
+[31m-#board.show_board[m
+\ No newline at end of file[m
+[32m+[m[32m  end[m
+[32m+[m[32mend[m
+[1mdiff --git a/lib/game.rb b/lib/game.rb[m
+[1mindex 188eedf..978e78a 100644[m
+[1m--- a/lib/game.rb[m
+[1m+++ b/lib/game.rb[m
+[36m@@ -19,7 +19,7 @@[m [mclass Game[m
+   def play[m
+     loop do [m
+       turn[m
+[31m-[m
+[32m+[m[32m      winner?()[m
+       #reasons to break the loop if they don't exist[m
+       [m
+       switch_player[m

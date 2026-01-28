@@ -19,7 +19,7 @@ class Game
   def play
     loop do 
       turn
-
+      winner?()
       #reasons to break the loop if they don't exist
       
       switch_player

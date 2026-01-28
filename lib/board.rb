@@ -35,12 +35,38 @@ class Board
 
     @board[row_index][col_index] = marker
     true
-    
-
   end
 
+  def winner?(marker)
+    lines = []
+    
+    @board.each do |row|
+      lines << row
+    end
+
+    @board.transpose.each do |column|
+      lines << column
+    end
+
+    diag1 = [@board[0][0], @board[1][1], @board[2][2]]
+    diag2 = [@board[0][2], @board[1][1], @board[2][0]]
+
+    lines << diag1
+    lines << diag2
+
+    lines.any? do |line|
+      line.all? do |element|
+        element == marker
+      end
+    end
+  end
+
+  def draw?
+    flat_board = @board.flatten
+
+    flat_board.none? do |element|
+      element.is_a?(Integer)
+    end
+
+  end
 end
-
-#board = Board.new
-
-#board.show_board
