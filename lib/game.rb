@@ -19,12 +19,17 @@ class Game
   def play
     loop do 
       turn
-      winner?()
-      #reasons to break the loop if they don't exist
-      
-      switch_player
+      if @board.winner?(@current_player.marker)
+        puts "#{@current_player.marker} wins!"
+        break
+      elsif @board.draw?
+        puts "It's a draw!"
+        break
+      else
+        switch_player
+        puts "It's #{@current_player.marker}'s turn."
+      end
     end
-    
   end
 
   def ask_for_position
@@ -45,9 +50,7 @@ class Game
 
     position = ask_for_position
 
-    currentmarker = @current_player.marker
-
-    until @board.update_board(position,currentmarker)
+    until @board.update_board(position,@current_player.marker)
       puts "That spot is already taken"
       position = ask_for_position
     end
