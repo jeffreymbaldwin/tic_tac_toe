@@ -24,6 +24,7 @@ ruby game.rb
 
 ## Example Output
 
+```
 It's X's turn.
 What number will you place your marker?
 5
@@ -34,4 +35,4 @@ Marker Placed!
 --------------
 7  |  8  |  9
 
-
+```
