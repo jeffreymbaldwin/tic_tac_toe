@@ -1,18 +1,7 @@
 class Board
   
   def initialize
-    
-  end
-
-  def create_board
-    @board = [
-
-      [1,2,3],
-      [4,5,6],
-      [7,8,9]
-
-    ]
-  
+    create_board
   end
 
   def show_board
@@ -70,3 +59,18 @@ class Board
 
   end
 end
+
+#~~~~~~~~private methods below here ~~~~~~
+
+private
+
+  def create_board
+    @board = [
+
+      [1,2,3],
+      [4,5,6],
+      [7,8,9]
+
+    ]
+  
+  end

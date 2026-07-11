@@ -12,7 +12,6 @@ class Game
   end
 
   def start
-    @board.create_board
     @board.show_board
     play
   end
