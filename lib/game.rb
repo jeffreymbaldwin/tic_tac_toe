@@ -15,6 +15,7 @@ class Game
     @board.show_board
     play
   end
+  
   def play
     loop do 
       puts "It's #{@current_player.marker}'s turn."
