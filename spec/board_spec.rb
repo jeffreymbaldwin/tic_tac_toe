@@ -10,8 +10,21 @@ RSpec.describe Board do
       result = board.update_board(position, marker)
 
       expect(result).to eq(true)
-
     end
+
+    it "returns false when placing a marker in an unavailable position" do
+      board = Board.new
+      position = 3
+      marker = "X"
+      board.update_board(position, marker)
+
+      result = board.update_board(position, marker)
+      
+      expect(result).to eq(false)
+      
+    end
+
+
   end
 end
 
