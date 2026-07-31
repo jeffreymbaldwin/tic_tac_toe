@@ -37,7 +37,7 @@ class Game
     input = gets.chomp
 
     until input.match?(/^[1-9]$/)
-      puts "Please enter a number between 1 and 9:"
+      puts "Please enter a number between 1 and 9"
       input = gets.chomp
     end
 
