@@ -58,7 +58,7 @@ class Board
     end
 
   end
-end
+
 
 #~~~~~~~~private methods below here ~~~~~~
 
@@ -74,3 +74,4 @@ private
     ]
   
   end
+end
