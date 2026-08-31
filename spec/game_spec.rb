@@ -81,12 +81,3 @@ RSpec.describe Game do
   
 end
 
-# fake board
-# fake player one
-# fake player two
-# game built from those fakes
-
-# stub turn
-# control winner?
-# control draw?
-# possibly expect switch_player
