@@ -1,10 +1,9 @@
 # tic_tac_toe
-A command-line Tic Tac Toe game build in Ruby to practice OOP principles.
+A command-line Tic Tac Toe game built in Ruby to practice OOP principles.
 
 ## Description
 
-A tic-tac-toe game played on the command line where two human players can play against each other. The board is displayed
-in between turns. 
+A tic-tac-toe game played on the command line where two human players can play against each other. The board is displayed in between turns.
 
 ## Purpose
 
@@ -22,9 +21,9 @@ ruby game.rb
 
 ## Usage
 
-- Two players take turns placing markers on a 3x3 board. 
+- Two players take turns placing markers on a 3x3 board.
 - Enter a number from 1-9 to choose a position.
-- The game ends when a player wins or the game results in a draw. 
+- The game ends when a player wins or the game results in a draw.
 
 ## Example Output
 
