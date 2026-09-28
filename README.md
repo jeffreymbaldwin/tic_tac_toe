@@ -16,7 +16,7 @@ Practice OOP principles such as:
 ## How to Run
 
 ``` bash
-ruby game.rb
+ruby main.rb
 ```
 
 ## Usage
